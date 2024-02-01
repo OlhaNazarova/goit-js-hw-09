@@ -16,7 +16,7 @@ form.addEventListener('input', evt => {
 
 form.addEventListener('submit', evt => {
   evt.preventDefault();
-
+  console.log(formData);
   const isEmailFilled = formData.email && formData.email !== '';
   const isMessageFilled = formData.message && formData.message !== '';
 
