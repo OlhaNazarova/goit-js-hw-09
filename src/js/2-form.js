@@ -16,12 +16,14 @@ form.addEventListener('input', evt => {
 
 form.addEventListener('submit', evt => {
   evt.preventDefault();
-  console.log(formData);
+
+  
   const isEmailFilled = formData.email && formData.email !== '';
   const isMessageFilled = formData.message && formData.message !== '';
 
   if (isEmailFilled && isMessageFilled) {
     localStorage.removeItem(localStorageKey);
+    console.log(formData);
     form.reset();
     delete formData.email;
     delete formData.message;
@@ -29,4 +31,5 @@ form.addEventListener('submit', evt => {
     if (!isEmailFilled) console.log('Email field cannot be empty!');
     if (!isMessageFilled) console.log('Message field cannot be empty!');
   }
+  
 });
